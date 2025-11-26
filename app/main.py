@@ -28,12 +28,12 @@ app.include_router(items_router)
 
 
 @app.get("/")
-def root()-> str :
+def root()-> dict[str, str] :
     return {"message": "Items CRUD API"}
 
 
 @app.get("/health")
-def health():
+def health()-> dict[str, str] :
     return {"status": "healthy"}
 
 
