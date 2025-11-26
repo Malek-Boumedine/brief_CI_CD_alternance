@@ -275,3 +275,17 @@ Quand merger dans main ?
 
 ### ================================================================================================================
 
+# CI Pipeline - Tests, Quality & Security
+
+1. Pourquoi plusieurs jobs séparés ?
+  - Permet d’exécuter les tâches en parallèle, donc CI plus rapide.
+  - Plus simple de cibler précisément la cause d’un échec grâce aux logs spécialisés.
+
+2. Que faire si la CI échoue ?
+  - Lire les logs dans l’interface de la CI pour identifier l’erreur précise.
+  - Tenter de reproduire l’erreur localement avec les mêmes commandes CI.
+
+3. Faut-il tout corriger d'un coup ?
+  - Non, privilégier de petites PRs facilite la compréhension et la validation.
+  - Les revues de code sont plus rapides et moins sujettes aux erreurs.
+
