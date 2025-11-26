@@ -10,16 +10,17 @@ router = APIRouter(prefix="/items", tags=["items"])
 
 MAX_ITEMS_PER_PAGE = 1000
 
+
 @router.get("/", response_model=list[ItemResponse])
 def get_items(
-    skip: int = 0, limit: int = 100,
-    db: Session = Depends(get_db)) -> list[Item]:
+    skip: int = 0, limit: int = 100, db: Session = Depends(get_db)
+) -> list[Item]:
     """Récupère la liste des items avec pagination."""
     return ItemService.get_all(db, skip, limit)
 
 
 @router.get("/{item_id}", response_model=ItemResponse)
-def get_item(item_id: int,  db: Session = Depends(get_db)) -> Item:
+def get_item(item_id: int, db: Session = Depends(get_db)) -> Item:
     item = ItemService.get_by_id(db, item_id)
     if not item:
         raise HTTPException(
@@ -36,8 +37,8 @@ def create_item(item_data: ItemCreate, db: Session = Depends(get_db)) -> Item:
 
 @router.put("/{item_id}", response_model=ItemResponse)
 def update_item(
-        item_id: int,
-        item_data: ItemUpdate, db: Session = Depends(get_db)) -> Item:
+    item_id: int, item_data: ItemUpdate, db: Session = Depends(get_db)
+) -> Item:
     item = ItemService.update(db, item_id, item_data)
     if not item:
         raise HTTPException(
@@ -56,6 +57,7 @@ def delete_item(item_id: int, db: Session = Depends(get_db)) -> None:
             detail=f"Item with id {item_id} not found",
         )
 
-def _old_helper_function(data : str) -> str:
+
+def _old_helper_function(data: str) -> str:
     """Cette fonction n'est plus utilisée mais n'a pas été supprimée."""
     return data.upper()

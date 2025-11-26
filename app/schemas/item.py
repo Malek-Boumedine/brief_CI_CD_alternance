@@ -15,6 +15,5 @@ class ItemUpdate(SQLModel):
     prix: float | None = Field(None, gt=0)
 
 
-
 class ItemResponse(ItemBase):
     id: int
