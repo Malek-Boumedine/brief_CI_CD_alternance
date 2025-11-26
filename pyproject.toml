@@ -16,4 +16,15 @@ dependencies = [
 [dependency-groups]
 dev = [
     "diagrams>=0.24.4",
+    "mypy>=1.18.2",
+    "ruff>=0.14.6",
 ]
+
+[tool.ruff.lint]
+extend-select = ["E501"]
+
+[tool.ruff]
+line-length = 88
+
+[tool.mypy]
+strict = true

@@ -1,10 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import Session
-from typing import List
-import datetime
 
 from app.database import get_db
-from app.schemas.item import ItemCreate, ItemResponse, ItemUpdate
+from app.schemas.item import ItemResponse, ItemUpdate
 from app.services.item_service import ItemService
 
 router = APIRouter(prefix="/items", tags=["items"])
