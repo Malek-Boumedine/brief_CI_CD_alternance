@@ -215,7 +215,7 @@ MkDocs permet de transformer des fichiers Markdown en un site statique de docume
 
 ### ================================================================================================================
 
-## ❓ Questions de réflexion
+# Identifier les problèmes
 
 1. **Le code fonctionne, mais** :
   - Est-il maintenable ?
@@ -245,5 +245,33 @@ Ruff, Black, Mypy, pytest et Bandit 
 1. **Comment empêcher ces problèmes à l'avenir ?**
 En mettant en place des hooks de pre-commit locaux et pipelines CI/CD automatiques pour lint, tests, typage, et sécurité systématiques avant fusion.
 
+### ================================================================================================================
 
+# Conventional Commits
+
+1. Pourquoi protéger les branches ?
+- Pour éviter erreurs, suppressions accidentelles et modifications non contrôlées.
+
+Que se passerait-il sans protection ?
+- Risque de bugs, conflits, perte de code, et mauvaise qualité du dépôt.
+
+2. Pourquoi Conventional Commits ?
+- Pour standardiser les messages, faciliter la lecture, l’automatisation et le versionnage.
+
+Avantages pour l'équipe
+- Meilleure communication, compréhension claire des changements, moins d’erreurs humaines.
+
+Avantages pour le versionnage automatique
+- Permet de générer automatiquement les versions et changelogs fiables et cohérents.
+
+3. Différence entre develop et main ?
+- develop sert au développement continu, main est la branche stable prête à être déployée.
+
+Quand merger dans develop ?
+- Quand une fonctionnalité ou correction est terminée et validée en local ou feature branch.
+
+Quand merger dans main ?
+- Quand la version est testée, stable et prête pour la production ou livraison.
+
+### ================================================================================================================
 
