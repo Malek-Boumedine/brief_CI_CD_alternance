@@ -2,17 +2,18 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlmodel import Session
 
 from app.database import get_db
-from app.schemas.item import ItemResponse, ItemUpdate
-from app.services.item_service import ItemService, ItemCreate
 from app.models.item import Item
-
+from app.schemas.item import ItemResponse, ItemUpdate
+from app.services.item_service import ItemCreate, ItemService
 
 router = APIRouter(prefix="/items", tags=["items"])
 
 MAX_ITEMS_PER_PAGE = 1000
 
 @router.get("/", response_model=list[ItemResponse])
-def get_items(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)) -> list[Item]:
+def get_items(
+    skip: int = 0, limit: int = 100,
+    db: Session = Depends(get_db)) -> list[Item]:
     """Récupère la liste des items avec pagination."""
     return ItemService.get_all(db, skip, limit)
 
@@ -34,7 +35,9 @@ def create_item(item_data: ItemCreate, db: Session = Depends(get_db)) -> Item:
 
 
 @router.put("/{item_id}", response_model=ItemResponse)
-def update_item(item_id: int, item_data: ItemUpdate, db: Session = Depends(get_db)) -> Item:
+def update_item(
+        item_id: int,
+        item_data: ItemUpdate, db: Session = Depends(get_db)) -> Item:
     item = ItemService.update(db, item_id, item_data)
     if not item:
         raise HTTPException(

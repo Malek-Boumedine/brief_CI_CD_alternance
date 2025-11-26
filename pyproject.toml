@@ -15,6 +15,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "bandit>=1.9.2",
     "diagrams>=0.24.4",
     "mypy>=1.18.2",
     "ruff>=0.14.6",
@@ -34,7 +35,7 @@ select = [
     "C4", # flake8-comprehensions
     "UP", # pyupgrade
 ]
-ignore = []
+ignore = ["B008"]
 
 [tool.ruff.format]
 quote-style = "double"
