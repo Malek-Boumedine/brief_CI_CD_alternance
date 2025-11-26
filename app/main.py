@@ -12,7 +12,6 @@ from app.routes import items_router
 load_dotenv()
 
 DEBUG_MODE = os.getenv("DEBUG_MODE", True)
-UNUSED_VAR = "cette variable n'est jamais utilisée"
 
 
 @asynccontextmanager
@@ -39,8 +38,3 @@ def root() -> dict[str, str]:
 @app.get("/health")
 def health() -> dict[str, str]:
     return {"status": "healthy"}
-
-
-very_long_variable_name_that_exceeds_line_length = """Cette ligne est
- intentionnellement trop longue pour violer les règles de formatage
- standard"""

@@ -14,8 +14,6 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL", "database_url")
 
-POOL_SIZE = 10
-
 engine = create_engine(DATABASE_URL)
 
 
