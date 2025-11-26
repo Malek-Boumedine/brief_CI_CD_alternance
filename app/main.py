@@ -1,16 +1,18 @@
+from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from sqlmodel import SQLModel
+
 from app.database import engine
 from app.routes import items_router
-from typing import AsyncGenerator
 
 DEBUG_MODE = True
 UNUSED_VAR = "cette variable n'est jamais utilisée"
 
 
 @asynccontextmanager
-async def lifespan(fastapi_app: FastAPI) -> AsyncGenerator[None, None]:
+async def lifespan(fastapi_app: FastAPI) -> AsyncGenerator[None]:
     SQLModel.metadata.create_all(engine)
     yield
 

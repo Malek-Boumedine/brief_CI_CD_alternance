@@ -1,5 +1,6 @@
 from sqlmodel import Field, SQLModel
 
+
 class Item(SQLModel, table=True):
     __tablename__ = "items"
 
