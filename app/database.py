@@ -12,8 +12,7 @@ from sqlmodel import Session, create_engine
 
 load_dotenv()
 
-DATABASE_URL = os.getenv(
-    "DATABASE_URL", None)
+DATABASE_URL = os.getenv("DATABASE_URL", "database_url")
 
 POOL_SIZE = 10
 
