@@ -7,11 +7,13 @@ et fournit une fonction générateur pour obtenir des sessions de base de donné
 import os
 from collections.abc import Generator
 
+from dotenv import load_dotenv
 from sqlmodel import Session, create_engine
 
+load_dotenv()
+
 DATABASE_URL = os.getenv(
-    "DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/items_db"
-)
+    "DATABASE_URL", None)
 
 POOL_SIZE = 10
 
