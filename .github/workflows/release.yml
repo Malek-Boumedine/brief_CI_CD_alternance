@@ -18,9 +18,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
+          token: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
 
       - name: Set up uv
         uses: astral-sh/setup-uv@v4
@@ -37,6 +38,6 @@ jobs:
       - name: Publish to GHCR (if new release)
         if: steps.release.outputs.released == 'true'
         run: |
-          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+          echo "${{ secrets.SEMANTIC_RELEASE_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
           docker build -t ghcr.io/${{ github.repository }}:${{ steps.release.outputs.version }} .
           docker push ghcr.io/${{ github.repository }}:${{ steps.release.outputs.version }}
