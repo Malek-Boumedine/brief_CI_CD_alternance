@@ -1,5 +1,9 @@
 name: CI
-on: [push, pull_request]
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -131,37 +135,3 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
       - uses: pre-commit/action@v3.0.0
-
-
-      # - name: Upload coverage report
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: coverage-report
-      #     path: coverage.xml
-      #     overwrite: true
-
-  # coverage-report:
-  #   needs: tests
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v6
-  #     - name: telecharger le rapport de couverture
-  #       uses: actions/download-artifact@v5
-  #       with:
-  #         name: coverage-report
-  #     - name: publier le rapport de couverture
-  #       uses: codecov/codecov-action@v3
-  #       with:
-  #         file: coverage.xml
-  #         flags: unittests
-  #         name: codecov-umbrella
-  #         fail_ci_if_error: true
-
-      # - name: publier le rapport de couverture
-      #   uses: codecov/codecov-action@v3
-      #   with:
-      #     token: ${{ secrets.CODECOV_TOKEN }}
-      #     file: coverage.xml
-      #     flags: unittests
-      #     name: codecov-umbrella
-      #     fail_ci_if_error: true
