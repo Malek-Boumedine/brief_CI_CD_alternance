@@ -59,7 +59,6 @@ addopts = "--strict-markers --cov=app --cov-report=term-missing"
 
 [tool.semantic_release]
 version_toml = ["pyproject.toml:project.version"]
-branch = "main"
 # build_command = "uv build"
 
 [tool.semantic_release.branches.main]
@@ -71,7 +70,7 @@ match = "develop"
 prerelease = true
 prerelease_token = "rc"
 
-[tool.semantic_release.changelog]
+[tool.semantic_release.changelog.default_templates]
 changelog_file = "CHANGELOG.md"
 exclude_commit_patterns = []
 
@@ -83,7 +82,6 @@ patch_tags = ["fix", "perf"]
 [tool.semantic_release.remote]
 name = "origin"
 type = "github"
-token = { env = "GH_TOKEN" }  # Token depuis variable d'environnement
 
 [tool.semantic_release.publish]
 dist_glob_patterns = ["dist/*"]
