@@ -1127,7 +1127,10 @@ CMD ["fastapi", "run", "app/main.py", "--port", "8000"]
 docker build -t items-api:local .
 
 # Run
-docker run -p 8000:8000 items-api:local
+docker run -p 8000:8000 \
+  -e DATABASE_URL="postgresql://<username>:<password>@host.docker.internal:5432/<database>" \
+  items-api:local
+
 
 # Test
 curl http://localhost:8000/health

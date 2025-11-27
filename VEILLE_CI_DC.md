@@ -288,3 +288,29 @@ Quand merger dans main ?
 3. Faut-il tout corriger d'un coup ?
   - Non, privilégier de petites PRs facilite la compréhension et la validation.
   - Les revues de code sont plus rapides et moins sujettes aux erreurs.
+
+### ================================================================================================================
+
+# Pre-commit Hooks
+
+
+
+1. Différence entre pre-commit et CI ?
+
+  - Pre-commit : s'exécute en local avant chaque commit sur les fichiers modifiés.
+  - CI : s'exécute sur le serveur après chaque push/PR sur tout le projet.
+  - Pourquoi les deux ? Pre-commit détecte vite les erreurs en local ; CI garantit que même ceux qui n'ont pas installé pre-commit respectent les règles.
+
+2. Peut-on bypass pre-commit ?
+
+  - Oui, avec git commit --no-verify ou -n.
+  - Mauvaise idée : tu contournes les vérifications et risques de casser la CI.
+  - Comment l'empêcher ? Impossible côté Git local, mais la CI bloquera quand même les erreurs.
+
+3. Pre-commit ralentit-il le développement ?
+
+  - Ajoute 5-10 secondes par commit.
+  - Mais économise 5-15 minutes d'attente CI + corrections si erreurs détectées après coup.
+  - Globalement, ça accélère le workflow.
+
+### ================================================================================================================
