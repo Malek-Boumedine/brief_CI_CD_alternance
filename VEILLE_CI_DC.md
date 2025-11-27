@@ -4,46 +4,46 @@ CI et CD sont des pratiques d’automatisation qui évitent l’« enfer des i
 
 ## 1. Qu’est-ce que la CI ?
 
-- ### Définition : 
+- ### Définition :
 la Continuous Integration, c’est le fait de merger souvent du code (plusieurs fois par jour) sur une branche partagée, avec une pipeline automatique qui build et exécute les tests à chaque push/PR.
 
-- ### Problèmes résolus : 
+- ### Problèmes résolus :
 gros conflits de merge en fin de sprint, bugs découverts très tard, régressions après intégration d’un gros lot de code, tests manuels chronophages.
 
-- ### Principes clés : 
+- ### Principes clés :
 petits commits fréquents, dépôt central unique, build/tests automatisés, feedback rapide, règle « build rouge = on arrête tout et on répare ».
 
-- ### Exemples d’outils de CI : 
+- ### Exemples d’outils de CI :
 GitHub Actions, GitLab CI, Jenkins.
 
 ## 1. Qu’est-ce que le CD ?
 
-- ### Définition générale : 
+- ### Définition générale :
 le CD automatise ce qui se passe après la CI : packaging, déploiement sur les environnements (recette, staging, prod), migrations, etc.
 
 ## Continuous Delivery vs Continuous Deployment :
 
-- ### Continuous Delivery : 
+- ### Continuous Delivery :
 tout est automatisé jusqu’à un artefact prêt à être déployé ; la mise en prod nécessite encore un « OK » humain (bouton ou approval).
 
-- ### Continuous Deployment : 
+- ### Continuous Deployment :
 si la pipeline est verte, la mise en prod est déclenchée automatiquement, sans validation manuelle.
 
-- ### Bénéfices : 
+- ### Bénéfices :
 déploiements fréquents et reproductibles, moins de stress en release, feedback utilisateur plus rapide, petits changements donc moins risqués individuellement.
 
-- ### Risques : 
+- ### Risques :
 pousser plus vite des bugs en prod si la qualité des tests est faible, erreurs de configuration d’infra, incidents plus fréquents si la supervision et le rollback ne sont pas maîtrisés.
 
 ## 3. Pourquoi CI/CD est important ?
 
-- ### Impact sur la qualité du code : 
+- ### Impact sur la qualité du code :
 impose des tests automatiques, linters, vérifs de style/sécurité à chaque changement, ce qui réduit les régressions et uniformise le niveau de qualité.
 
-- ### Impact sur la vitesse de développement : 
+- ### Impact sur la vitesse de développement :
 moins de tâches manuelles (tests à la main, packaging, déploiements), boucle de feedback plus courte, ce qui permet d’itérer plus vite et de livrer plus souvent.
 
-- ### Impact sur la collaboration : 
+- ### Impact sur la collaboration :
 tout le monde passe par la même pipeline, l’état du projet est visible (build vert/rouge), cela réduit les « chez moi ça marche » et facilite le travail en équipe sur une même base de code.
 
 ### ================================================================================================================
@@ -99,7 +99,7 @@ Le versionnage sémantique (SemVer) est une convention de numérotation de versi
 ## 2. Conventional Commits
 
 - Format des messages : Conventional Commits impose un format du style :
-    
+
     type(scope)?: description (ex. feat(api): add user endpoint).
 
 - Types de commits courants
@@ -288,4 +288,3 @@ Quand merger dans main ?
 3. Faut-il tout corriger d'un coup ?
   - Non, privilégier de petites PRs facilite la compréhension et la validation.
   - Les revues de code sont plus rapides et moins sujettes aux erreurs.
-

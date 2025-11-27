@@ -81,7 +81,7 @@ jobs:
       - name: Bandit
         run: uv run bandit -r app/
 
-  tests: 
+  tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -124,7 +124,7 @@ jobs:
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test_db
         run: uv run pytest --cov=app --cov-report=term --cov-report=xml
-      
+
       # - name: Upload coverage report
       #   uses: actions/upload-artifact@v4
       #   with:
@@ -132,10 +132,10 @@ jobs:
       #     path: coverage.xml
       #     overwrite: true
 
-  # coverage-report: 
+  # coverage-report:
   #   needs: tests
   #   runs-on: ubuntu-latest
-  #   steps: 
+  #   steps:
   #     - uses: actions/checkout@v6
   #     - name: telecharger le rapport de couverture
   #       uses: actions/download-artifact@v5

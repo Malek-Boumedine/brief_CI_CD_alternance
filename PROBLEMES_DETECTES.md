@@ -1,6 +1,6 @@
 ## fichier database.py :
 
-- imports inutiles : 
+- imports inutiles :
   - import sys
   - from typing import Generator
 - DATABASE_URL : pas d'identifiants en DUR, tout mettre dans le .env
@@ -9,7 +9,7 @@
 
 ## main.py :
 
-- imports inutiles : 
+- imports inutiles :
   - import os
   - import sys
   - import json
@@ -20,21 +20,21 @@
 - secret, API_KEY : ne pas mettre en dur, les mettre dans le .env et les charger
 - very_long_variable_name_that_exceeds_line_length : nom de variable trop long
 
-## fichier models/item.py : 
+## fichier models/item.py :
 
 - import inutile : from typing import Optional
 - _legacy_method non implémentée
 
 ## fichier routes/items.py :
 
-- imports inutiles : 
+- imports inutiles :
   - from typing import List
   - import datetime
   - ItemCreate
 - MAX_ITEMS_PER_PAGE : à mettre dans le .env
 - get_items(), get_item(), create_item(), update_item(), delete_item() -> pas de type de retour
 - _old_helper_function : doit être supprimée
-- 
+-
 
 ## fichier schema/item.py :
 
@@ -46,7 +46,7 @@
 
 ### =============================================================================
 
-## avec ruff : 
+## avec ruff :
 
 F401 [*] `sys` imported but unused
   --> app/database.py:9:8
@@ -193,7 +193,7 @@ uv run ruff check --fix
 
 ### =============================================================================
 
-## avec mypy : 
+## avec mypy :
 
 uv run mypy app/
 app/database.py:19: error: Function is missing a return type annotation  [no-untyped-def]
@@ -212,11 +212,3 @@ app/main.py:33: error: Function is missing a return type annotation  [no-untyped
 Found 12 errors in 4 files (checked 11 source files)
 
 fix : manuellement
-
-
-
-
-
-
-
-
