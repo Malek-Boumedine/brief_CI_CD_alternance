@@ -314,3 +314,55 @@ Quand merger dans main ?
   - Globalement, ça accélère le workflow.
 
 ### ================================================================================================================
+
+# Build & Push Docker Image vers GHCR
+
+1. Pourquoi containeriser ?
+
+- Avantages Docker :
+
+  - Portabilité totale : même environnement partout (dev, test, prod)
+  - Isolation complète : pas de conflits entre applications
+  - Rapide et léger : démarrage en secondes, moins de ressources qu'une VM
+
+- "Works on my machine" :
+  - Docker empaquette l'app + toutes ses dépendances = plus de différence entre ton PC et la prod.
+​
+2. Multi-stage build : pourquoi ?
+
+- Taille :
+  - Sépare build (outils lourds) et exécution (artefact final seul) → images 5-10x plus petites.
+
+- Sécurité :
+  - Pas d'outils de build ni de dépendances dev dans l'image finale = moins de surface d'attaque.
+
+3. Tagging strategy
+
+- Pourquoi plusieurs tags ?
+  - Référencer la même image différemment selon le besoin (rollback, traçabilité, déploiement).
+
+- latest vs semver vs sha :
+
+  - latest : dernière version, pratique mais dangereux (change sans prévenir)
+  - semver (v1.2.3) : versioning clair, parfait pour releases stables
+  - sha (abc1234) : immuable, garantit exactement quelle version tourne en prod
+
+### ================================================================================================================
+
+# Semantic Release
+
+1. Quels commits déclenchent un bump de version ?
+
+  - feat: → bump MINOR (1.0.0 → 1.1.0)
+  - fix: ou perf: → bump PATCH (1.0.0 → 1.0.1)
+  - BREAKING CHANGE: (dans le footer) → bump MAJOR (1.0.0 → 2.0.0)
+
+2. Différence entre main et develop ?
+
+  - main : releases stables (ex: 1.0.0, 2.0.0)
+  - develop : releases pre-release/rc (ex: 1.1.0-rc.1, 1.1.0-rc.2)
+
+3. Que contient le CHANGELOG ?
+
+  - Liste automatiquement générée de tous les commits groupés par type (feat, fix, etc.) pour chaque version, avec liens vers les PRs et commits.
+​
