@@ -125,6 +125,14 @@ jobs:
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test_db
         run: uv run pytest --cov=app --cov-report=term --cov-report=xml
 
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - uses: pre-commit/action@v3.0.0
+
+
       # - name: Upload coverage report
       #   uses: actions/upload-artifact@v4
       #   with:
