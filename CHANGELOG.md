@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.4.1 (2025-11-28)
+
+### Bug Fixes
+
+- **docs**: Add mkdocs as dev dependency
+  ([`5a61153`](https://github.com/Malek-Boumedine/brief_CI_CD_alternance/commit/5a611535db1ef7c8c2ce21d12f48b954ba448735))
+
+
 ## v1.4.0 (2025-11-28)
 
 ### Features
