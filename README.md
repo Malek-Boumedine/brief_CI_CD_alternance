@@ -1,4 +1,3 @@
-A REMPLIR
-# Test
+# Voir la documentation complète sur ;
 
-# TEST SEMANTIC PLEASE MARCHE !!!!! :(
+### https://malek-boumedine.github.io/brief_CI_CD_alternance
