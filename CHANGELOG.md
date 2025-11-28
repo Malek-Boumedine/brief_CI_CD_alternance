@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.3.1 (2025-11-28)
+
+### Bug Fixes
+
+- **items**: Add test for price validation
+  ([`076a6df`](https://github.com/Malek-Boumedine/brief_CI_CD_alternance/commit/076a6df77d3e1a2b48d71cd38123c9d686ab2725))
+
+
 ## v1.3.0 (2025-11-28)
 
 ### Features
