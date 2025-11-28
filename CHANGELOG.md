@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.3.0 (2025-11-28)
+
+### Features
+
+- **api**: Adaptation et correction repo git dans release
+  ([`781014d`](https://github.com/Malek-Boumedine/brief_CI_CD_alternance/commit/781014dc2ac25e085f3dcd5ca36a309257e59e8c))
+
+
 ## v1.2.0 (2025-11-28)
 
 ### Features
