@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlmodel import Session
 
 from app.database import get_db
@@ -8,15 +8,18 @@ from app.services.item_service import ItemCreate, ItemService
 
 router = APIRouter(prefix="/items", tags=["items"])
 
-MAX_ITEMS_PER_PAGE = 1000
+MAX_ITEMS_PER_PAGE = 100
 
 
 @router.get("/", response_model=list[ItemResponse])
 def get_items(
-    skip: int = 0, limit: int = 100, db: Session = Depends(get_db)
+    page: int = Query(1, ge=1),
+    page_size: int = Query(10, ge=1, le=MAX_ITEMS_PER_PAGE),
+    db: Session = Depends(get_db),
 ) -> list[Item]:
-    """Récupère la liste des items avec pagination."""
-    return ItemService.get_all(db, skip, limit)
+    """Récupère la liste paginée des items."""
+    offset = (page - 1) * page_size
+    return ItemService.get_all(db, skip=offset, limit=page_size)
 
 
 @router.get("/{item_id}", response_model=ItemResponse)
