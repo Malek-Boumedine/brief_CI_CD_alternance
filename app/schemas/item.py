@@ -3,7 +3,7 @@ from sqlmodel import Field, SQLModel
 
 class ItemBase(SQLModel):
     nom: str = Field(min_length=1, max_length=255)
-    prix: float = Field(gt=0)
+    prix: float = Field(gt=10)
 
 
 class ItemCreate(ItemBase):
