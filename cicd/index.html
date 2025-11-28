@@ -81,6 +81,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#cicd-et-semantic-release" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -573,6 +578,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -590,6 +615,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#integration-continue-ci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intégration continue (CI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic Release
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -639,6 +716,49 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#integration-continue-ci" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intégration continue (CI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#semantic-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semantic Release
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -658,9 +778,23 @@
   
 
 
-  <h1>CI/CD</h1>
-
-
+<h1 id="cicd-et-semantic-release">CI/CD et Semantic Release</h1>
+<h2 id="integration-continue-ci">Intégration continue (CI)</h2>
+<p>La CI exécute :
+- Ruff (lint + format).
+- Mypy (typage).
+- Bandit (sécurité).
+- Tests unitaires + couverture.</p>
+<p>Le workflow se trouve dans <code>.github/workflows/ci.yml</code>.</p>
+<h2 id="semantic-release">Semantic Release</h2>
+<p>Semantic Release gère :
+- Le versionnement sémantique (major / minor / patch).
+- La génération automatique du CHANGELOG.
+- La création des releases GitHub.
+- Le taggage automatique des versions.</p>
+<p>Configuration : <code>pyproject.toml</code> (<code>[tool.semantic_release]</code>).</p>
+<h2 id="documentation">Documentation</h2>
+<p>La documentation MkDocs est déployée via <code>.github/workflows/docs.yml</code> sur la branche <code>gh-pages</code>.</p>
 
 
 

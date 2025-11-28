@@ -81,6 +81,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#modeles" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -513,6 +518,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modèles
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -530,6 +555,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#app.models.item" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        item
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="item">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app.models.item-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app.models.item.Item" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Item
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -642,6 +731,61 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#app.models.item" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        item
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="item">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app.models.item-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app.models.item.Item" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Item
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -661,9 +805,235 @@
   
 
 
-  <h1>Modèles</h1>
+<h1 id="modeles">Modèles</h1>
+<p>Documentation des modèles de données utilisés par l'API.</p>
 
 
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="app.models.item" class="doc doc-heading">
+            <code>app.models.item</code>
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+        <p>Modèle de données pour les articles.</p>
+<p>Ce module définit le modèle SQLModel pour la table des articles
+dans la base de données PostgreSQL.</p>
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h3 id="app.models.item-classes">Classes</h3>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h4 id="app.models.item.Item" class="doc doc-heading">
+            <code>Item</code>
+
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="sqlmodel.SQLModel">SQLModel</span></code></p>
+
+
+
+        <p>Modèle représentant un article dans la base de données.</p>
+<p>Cette classe définit la structure de la table 'items' et les contraintes
+associées. Elle est utilisée à la fois comme modèle ORM et comme schéma
+de validation.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="app.models.item.Item.id">id</span></code></td>
+            <td>
+                  <code><span title="int">int</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Identifiant unique auto-incrémenté de l'article.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="app.models.item.Item.nom">nom</span></code></td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Nom de l'article, indexé pour améliorer les performances de recherche.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="app.models.item.Item.prix">prix</span></code></td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Prix de l'article en euros.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <blockquote>
+<blockquote>
+<blockquote>
+<p>item = Item(nom="Clavier mécanique", prix=89.99)
+db.add(item)
+db.commit()
+print(item.id)  # ID auto-généré
+1</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</details>
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>app/models/item.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Item</span><span class="p">(</span><span class="n">SQLModel</span><span class="p">,</span> <span class="n">table</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Modèle représentant un article dans la base de données.</span>
+
+<span class="sd">    Cette classe définit la structure de la table &#39;items&#39; et les contraintes</span>
+<span class="sd">    associées. Elle est utilisée à la fois comme modèle ORM et comme schéma</span>
+<span class="sd">    de validation.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        id: Identifiant unique auto-incrémenté de l&#39;article.</span>
+<span class="sd">        nom: Nom de l&#39;article, indexé pour améliorer les performances de recherche.</span>
+<span class="sd">        prix: Prix de l&#39;article en euros.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; item = Item(nom=&quot;Clavier mécanique&quot;, prix=89.99)</span>
+<span class="sd">        &gt;&gt;&gt; db.add(item)</span>
+<span class="sd">        &gt;&gt;&gt; db.commit()</span>
+<span class="sd">        &gt;&gt;&gt; print(item.id)  # ID auto-généré</span>
+<span class="sd">        1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s2">&quot;items&quot;</span>
+
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">nom</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">prix</span><span class="p">:</span> <span class="nb">float</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_legacy_method</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Méthode héritée conservée pour compatibilité.</span>
+
+<span class="sd">        Note:</span>
+<span class="sd">            Cette méthode est dépréciée et sera supprimée dans une version future.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
 
 
 
