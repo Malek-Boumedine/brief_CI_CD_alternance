@@ -15,11 +15,15 @@ MAX_ITEMS_PER_PAGE = 100
 def get_items(
     page: int = Query(1, ge=1),
     page_size: int = Query(10, ge=1, le=MAX_ITEMS_PER_PAGE),
+    max_prix: float | None = Query(None, ge=0),
     db: Session = Depends(get_db),
 ) -> list[Item]:
-    """Récupère la liste paginée des items."""
+    """Récupère la liste paginée des items, avec filtre optionnel sur le prix max."""
     offset = (page - 1) * page_size
-    return ItemService.get_all(db, skip=offset, limit=page_size)
+    items = ItemService.get_all(db, skip=offset, limit=page_size)
+    if max_prix is not None:
+        items = [item for item in items if item.prix <= max_prix]
+    return items
 
 
 @router.get("/{item_id}", response_model=ItemResponse)
