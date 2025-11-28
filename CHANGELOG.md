@@ -2,6 +2,17 @@
 
 <!-- version list -->
 
+## v1.4.0 (2025-11-28)
+
+### Features
+
+- **docs**: Add mkdocs configuration
+  ([`b0dd265`](https://github.com/Malek-Boumedine/brief_CI_CD_alternance/commit/b0dd26515604f543eca90ef7b908eb19e8be2d40))
+
+- **docs**: Add mkdocs deployment workflow
+  ([`351d0ec`](https://github.com/Malek-Boumedine/brief_CI_CD_alternance/commit/351d0ec4f742c646050a29abcf3c45a8658fe575))
+
+
 ## v1.3.1 (2025-11-28)
 
 ### Bug Fixes
