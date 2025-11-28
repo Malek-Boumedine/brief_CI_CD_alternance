@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.5.0 (2025-11-28)
+
+### Features
+
+- **docs**: Add mkdocs documentation
+  ([`c94e1cb`](https://github.com/Malek-Boumedine/brief_CI_CD_alternance/commit/c94e1cbc9b67645afccd371247740612b381f324))
+
+
 ## v1.4.1 (2025-11-28)
 
 ### Bug Fixes
