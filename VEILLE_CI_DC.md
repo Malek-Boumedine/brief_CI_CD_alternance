@@ -366,3 +366,22 @@ Quand merger dans main ?
 
   - Liste automatiquement générée de tous les commits groupés par type (feat, fix, etc.) pour chaque version, avec liens vers les PRs et commits.
 ​
+## Questions de réflexion
+
+1. Pourquoi automatic versioning ?
+
+  - Vs manuel : élimine les oublis, incohérences, conflits d'équipe
+  - Erreurs humaines : bump incorrect, tags manquants, versions dupliquées
+
+2. Conventional Commits : critique ?
+
+  - Avantages : automatisation, historique clair, génération de changelog
+  - Inconvénients : courbe d'apprentissage, messages parfois artificiels, rigidité
+  - Discipline : nécessite formation d'équipe, hooks pre-commit, revue de PR stricte
+
+3. CHANGELOG automatique
+
+  - Qui le lit : utilisateurs finaux, devs qui intègrent la lib, équipes support, auditeurs
+  - Utilité : savoir ce qui a changé entre versions, anticiper breaking changes, tracer bugs
+
+### ================================================================================================================
